@@ -1,79 +1,227 @@
 <!DOCTYPE HTML>
 <!--
-	Stellar by HTML5 UP
+	Strata by HTML5 UP
 	html5up.net | @ajlkn
 	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
 -->
 <html>
 	<head>
-		<title>Generic - Stellar by HTML5 UP</title>
+		<title>Uniform Catalogue</title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="assets/css/main.css" />
-		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+		<style>
+			/* Side-by-side layout */
+			.side-by-side-container {
+				display: flex;
+				flex-wrap: wrap;
+				gap: 2rem;
+				max-width: 1200px;
+				margin: 0 auto;
+				padding: 2rem;
+			}
+			
+			.catalogue-section {
+				flex: 1;
+				min-width: 300px;
+			}
+			
+			.featured-section {
+				flex: 2;
+				min-width: 300px;
+			}
+			
+			/* Catalogue Section Styles */
+			.section-title {
+				color: #333;
+				font-size: 1.5rem;
+				font-weight: bold;
+				margin-bottom: 1.5rem;
+				text-transform: uppercase;
+				letter-spacing: 1px;
+				border-bottom: 2px solid #2a5ca7;
+				padding-bottom: 0.5rem;
+			}
+			
+			.category-grid {
+				display: grid;
+				grid-template-columns: 1fr;
+				gap: 1rem;
+			}
+			
+			.category-item {
+				background: #fff;
+				border-radius: 6px;
+				padding: 1.2rem;
+				box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+				transition: all 0.3s ease;
+				border-left: 4px solid #2a5ca7;
+			}
+			
+			.category-item:hover {
+				transform: translateY(-3px);
+				box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+			}
+			
+			.category-title {
+				color: #2a5ca7;
+				font-size: 1rem;
+				font-weight: 600;
+				margin: 0;
+			}
+			
+			/* Featured Products Styles - 2 columns */
+			.featured-grid {
+				display: grid;
+				grid-template-columns: repeat(2, 1fr);
+				gap: 1rem;
+			}
+			
+			.work-item {
+				background: #fff;
+				border-radius: 6px;
+				overflow: hidden;
+				box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+				transition: all 0.3s ease;
+			}
+			
+			.work-item:hover {
+				transform: translateY(-3px);
+				box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+			}
+			
+			.work-item h3 {
+				color: #2a5ca7;
+				font-size: 1rem;
+				margin: 0.5rem 1rem;
+			}
+			
+			.work-item p {
+				font-size: 0.9rem;
+				margin: 0 1rem 1rem;
+				color: #666;
+			}
+			
+			/* Responsive adjustments */
+			@media screen and (max-width: 980px) {
+				.side-by-side-container {
+					flex-direction: column;
+				}
+				
+				.catalogue-section, .featured-section {
+					width: 100%;
+				}
+				
+				.featured-grid {
+					grid-template-columns: 1fr;
+				}
+			}
+		</style>
 	</head>
 	<body class="is-preload">
 
-		<!-- Wrapper -->
-			<div id="wrapper">
+		<!-- Header -->
+			<header id="header">
+				<div class="inner">
+					<a href="#" class="image avatar"><img src="images/avatar.jpg" alt="" /></a>
+					<h1><strong>Uniform Solutions</strong><br />
+					Quality workwear for every industry</h1>
+				</div>
+			</header>
 
-				<!-- Header -->
-					<header id="header">
-						<h1>Generic</h1>
-						<p>Ipsum dolor sit amet nullam</p>
-					</header>
+		<!-- Main -->
+			<div id="main">
 
-				<!-- Main -->
-					<div id="main">
+				<!-- Side-by-Side Sections -->
+				<div class="side-by-side-container">
+					<!-- Catalogue Section -->
+					<section class="catalogue-section">
+						<h2 class="section-title">Our Catalogue</h2>
+						
+						<div class="category-grid">
+							<div class="category-item">
+								<h3 class="category-title">Active Wear</h3>
+							</div>
+							
+							<div class="category-item">
+								<h3 class="category-title">Construction & Tradie Workwear</h3>
+							</div>
+							
+							<div class="category-item">
+								<h3 class="category-title">Custom Corporate Uniforms</h3>
+							</div>
+							
+							<div class="category-item">
+								<h3 class="category-title">Healthcare Uniforms</h3>
+							</div>
+							
+							<div class="category-item">
+								<h3 class="category-title">Hospitality Uniforms</h3>
+							</div>
+							
+							<div class="category-item">
+								<h3 class="category-title">Promotional Merchandise</h3>
+							</div>
+						</div>
+					</section>
 
-						<!-- Content -->
-							<section id="content" class="main">
-								<span class="image main"><img src="images/pic04.jpg" alt="" /></span>
-								<h2>Magna feugiat lorem</h2>
-								<p>Donec eget ex magna. Interdum et malesuada fames ac ante ipsum primis in faucibus. Pellentesque venenatis dolor imperdiet dolor mattis sagittis. Praesent rutrum sem diam, vitae egestas enim auctor sit amet. Pellentesque leo mauris, consectetur id ipsum sit amet, fergiat. Pellentesque in mi eu massa lacinia malesuada et a elit. Donec urna ex, lacinia in purus ac, pretium pulvinar mauris. Curabitur sapien risus, commodo eget turpis at, elementum convallis fames ac ante ipsum primis in faucibus.</p>
-								<p>Pellentesque venenatis dolor imperdiet dolor mattis sagittis. Praesent rutrum sem diam, vitae egestas enim auctor sit amet. Consequat leo mauris, consectetur id ipsum sit amet, fersapien risus, commodo eget turpis at, elementum convallis elit enim turpis lorem ipsum dolor sit amet feugiat. Phasellus convallis elit id ullamcorper pulvinar. Duis aliquam turpis mauris, eu ultricies erat malesuada quis. Aliquam dapibus, lacus eget hendrerit bibendum, urna est aliquam sem, sit amet est velit quis lorem.</p>
-								<h2>Tempus veroeros</h2>
-								<p>Cep risus aliquam gravida cep ut lacus amet. Adipiscing faucibus nunc placerat. Tempus adipiscing turpis non blandit accumsan eget lacinia nunc integer interdum amet aliquam ut orci non col ut ut praesent. Semper amet interdum mi. Phasellus enim laoreet ac ac commodo faucibus faucibus. Curae ante vestibulum ante. Blandit. Ante accumsan nisi eu placerat gravida placerat adipiscing in risus fusce vitae ac mi accumsan nunc in accumsan tempor blandit aliquet aliquet lobortis. Ultricies blandit lobortis praesent turpis. Adipiscing accumsan adipiscing adipiscing ac lacinia cep. Orci blandit a iaculis adipiscing ac. Vivamus ornare laoreet odio vis praesent nunc lorem mi. Erat. Tempus sem faucibus ac id. Vis in blandit. Nascetur ultricies blandit ac. Arcu aliquam. Accumsan mi eget adipiscing nulla. Non vestibulum ac interdum condimentum semper commodo massa arcu.</p>
-							</section>
-
-					</div>
-
-				<!-- Footer -->
-					<footer id="footer">
-						<section>
-							<h2>Aliquam sed mauris</h2>
-							<p>Sed lorem ipsum dolor sit amet et nullam consequat feugiat consequat magna adipiscing tempus etiam dolore veroeros. eget dapibus mauris. Cras aliquet, nisl ut viverra sollicitudin, ligula erat egestas velit, vitae tincidunt odio.</p>
-							<ul class="actions">
-								<li><a href="#" class="button">Learn More</a></li>
-							</ul>
-						</section>
-						<section>
-							<h2>Etiam feugiat</h2>
-							<dl class="alt">
-								<dt>Address</dt>
-								<dd>1234 Somewhere Road &bull; Nashville, TN 00000 &bull; USA</dd>
-								<dt>Phone</dt>
-								<dd>(000) 000-0000 x 0000</dd>
-								<dt>Email</dt>
-								<dd><a href="#">information@untitled.tld</a></dd>
-							</dl>
-							<ul class="icons">
-								<li><a href="#" class="icon brands fa-twitter alt"><span class="label">Twitter</span></a></li>
-								<li><a href="#" class="icon brands fa-facebook-f alt"><span class="label">Facebook</span></a></li>
-								<li><a href="#" class="icon brands fa-instagram alt"><span class="label">Instagram</span></a></li>
-								<li><a href="#" class="icon brands fa-github alt"><span class="label">GitHub</span></a></li>
-								<li><a href="#" class="icon brands fa-dribbble alt"><span class="label">Dribbble</span></a></li>
-							</ul>
-						</section>
-						<p class="copyright">&copy; Untitled. Design: <a href="https://html5up.net">HTML5 UP</a>.</p>
-					</footer>
+					<!-- Featured Products Section -->
+					<section class="featured-section">
+						<h2 class="section-title">Featured Products</h2>
+						<div class="featured-grid">
+							<article class="work-item">
+								<a href="images/fulls/01.jpg" class="image fit thumb"><img src="images/thumbs/01.jpg" alt="Active Wear" /></a>
+								<h3>Premium Active Wear</h3>
+								<p>High-performance fabrics for maximum comfort</p>
+							</article>
+							
+							<article class="work-item">
+								<a href="images/fulls/02.jpg" class="image fit thumb"><img src="images/thumbs/02.jpg" alt="Construction Workwear" /></a>
+								<h3>Durable Construction Gear</h3>
+								<p>Rugged protection for tradespeople</p>
+							</article>
+							
+							<article class="work-item">
+								<a href="images/fulls/03.jpg" class="image fit thumb"><img src="images/thumbs/03.jpg" alt="Corporate Uniforms" /></a>
+								<h3>Professional Corporate Attire</h3>
+								<p>Sharp uniforms for your business</p>
+							</article>
+							
+							<article class="work-item">
+								<a href="images/fulls/04.jpg" class="image fit thumb"><img src="images/thumbs/04.jpg" alt="Healthcare Uniforms" /></a>
+								<h3>Healthcare Scrubs</h3>
+								<p>Comfortable medical uniforms</p>
+							</article>
+							
+							<article class="work-item">
+								<a href="images/fulls/05.jpg" class="image fit thumb"><img src="images/thumbs/05.jpg" alt="Hospitality Uniforms" /></a>
+								<h3>Restaurant Uniforms</h3>
+								<p>Stylish outfits for service staff</p>
+							</article>
+							
+							<article class="work-item">
+								<a href="images/fulls/06.jpg" class="image fit thumb"><img src="images/thumbs/06.jpg" alt="Promotional Merchandise" /></a>
+								<h3>Branded Merchandise</h3>
+								<p>Custom promotional items</p>
+							</article>
+						</div>
+					</section>
+				</div>
 
 			</div>
 
+		<!-- Footer -->
+			<footer id="footer">
+				<div class="inner">
+					<ul class="copyright">
+						<li>&copy; Uniform Solutions</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+					</ul>
+				</div>
+			</footer>
+
 		<!-- Scripts -->
 			<script src="assets/js/jquery.min.js"></script>
-			<script src="assets/js/jquery.scrollex.min.js"></script>
-			<script src="assets/js/jquery.scrolly.min.js"></script>
+			<script src="assets/js/jquery.poptrox.min.js"></script>
 			<script src="assets/js/browser.min.js"></script>
 			<script src="assets/js/breakpoints.min.js"></script>
 			<script src="assets/js/util.js"></script>
