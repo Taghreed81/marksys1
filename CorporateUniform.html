@@ -17,7 +17,7 @@
 				flex-wrap: wrap;
 				gap: 2rem;
 				max-width: 1200px;
-				margin: 3em;
+				margin: 0 auto;
 				padding: 2rem;
 			}
 			
@@ -47,6 +47,7 @@
 				display: grid;
 				grid-template-columns: 1fr;
 				gap: 1rem;
+				margin-top: 07em;
 			}
 			
 			.category-item {
@@ -61,7 +62,6 @@
 			.category-item:hover {
 				transform: translateY(-3px);
 				box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-				background-color: #e7c6e3;
 			}
 			
 			.category-title {
@@ -126,20 +126,20 @@
 		</style>
 	</head>
 	<body class="is-preload">
-	
 
 		<!-- Header -->
 			<header id="header">
 				<div class="inner">
 					<a href="#" class="image avatar"><img src="images/avatar.jpg" alt="" /></a>
-					<h1><strong>Uniform Solutions</strong></h1><br />
-					<h3>Quality workwear for every industry</h3>
+					<h1><strong>Corporate Uniform</strong><br />
+					<!-- Quality workwear for every industry</h1> -->
 				</div>
 			</header>
 
 		<!-- Main -->
 			<div id="main">
 					<div id="wrapper">
+
 					<nav id="nav">
 						<ul>
 							<li><a href="#intro" class="active">HOME</a></li>
@@ -148,15 +148,16 @@
 							<li><a href="#">Get Started</a></li>
 						</ul>
 					</nav>
-					<br />
+
+
 				<!-- Side-by-Side Sections -->
 				<div class="side-by-side-container">
 					<!-- Catalogue Section -->
 					<section class="catalogue-section">
-						<h2 class="section-title">Our Catalogue</h2>
+						<!-- <h2 class="section-title">Our Catalogue</h2> -->
 						
 						<div class="category-grid">
-							<div class="category-item">
+								<div class="category-item">
 								<a href="CorporateUniform.html"><h3 class="category-title" >Corporate Uniform</h3></a>
 							</div>
 							
@@ -183,60 +184,53 @@
 					</section>
 
 					<!-- Featured Products Section -->
-					<section class="featured-section">
-						<h2 class="section-title">Featured Products</h2>
-						<div class="featured-grid">
-							<article class="work-item">
-								<a href="CorporateUniform.html" class="image fit thumb"><img src="images/Corporate-Uniform-opt.png" alt="Corporate Uniform" /></a>
-								<h3>Corporate Uniform</h3>
-								<p>Professional attire for business environments</p>
-							</article>
-							
-							<article class="work-item">
-								<a href="#" class="image fit thumb"><img src="images/Industrial-Work-wear-PPE-opt.png" alt="Industrial Work Wear & PPE" /></a>
-								<h3>Industrial Work Wear & PPE</h3>
-								<p>Durable protection for industrial workers</p>
-							</article>
-							
-							<article class="work-item">
-								<a href="Hospitality.html" class="image fit thumb"><img src="images/Hospitality-opt.png" alt="Hospitality" /></a>
-								<h3>Hospitality</h3>
-								<p>Stylish outfits for service industry</p>
-							</article>
-							
-							<article class="work-item">
-								<a href="#" class="image fit thumb"><img src="images/HealthCare-Sports-opt.png" alt="Healthcare & Sports" /></a>
-								<h3>Healthcare & Sports</h3>
-								<p>Comfortable medical uniforms</p>
-							</article>
-							
-							<article class="work-item">
-								<a href="#" class="image fit thumb"><img src="images/Facility-Management-opt.png" alt="Facility Management" /></a>
-								<h3>Facility Management</h3>
-								<p>Functional uniforms for facility staff</p>
-							</article>
-							
-							<article class="work-item">
-								<a href="#" class="image fit thumb"><img src="images/Uniform-Accessories-opt.png" alt="Uniform Accessories" /></a>
-								<h3>Uniform Accessories</h3>
-								<p>Complete your professional look</p>
-							</article>
-						</div>
-					</section>
+				<section class="featured-section">
+    <h2 class="section-title">Featured Products</h2>
+    <div class="featured-grid-uniform">    
+        <article class="work-item">
+            <a href="#" class="image fit thumb"><img src="images/21-400x400.jpg" alt="Industrial Work Wear & PPE" /></a>
+            <div class="product-info">
+                <h3>Long Sleeve Shirt</h3>
+            </div>
+        </article>
+        
+        <article class="work-item">
+            <a href="#" class="image fit thumb"><img src="images/23.jpg" alt="Hospitality" /></a>
+            <div class="product-info">
+                <h3>Office & Work Pants</h3>
+            </div>
+        </article>
+        
+        <article class="work-item">
+            <a href="#" class="image fit thumb"><img src="images/24042.jpeg" alt="Healthcare & Sports" /></a>
+            <div class="product-info">
+                <h3>Polo shirts</h3>
+            </div>
+        </article>
+        
+        <article class="work-item">
+            <a href="#" class="image fit thumb"><img src="images/22005-UN12_1.jpeg" alt="Facility Management" /></a>
+            <div class="product-info">
+                <h3>T-shirts & Caps</h3>
+            </div>
+        </article>
+        
+        <article class="work-item">
+            <a href="#" class="image fit thumb"><img src="images/27-300-outdoor-winter-insulated-Jacket-1.jpg" alt="Uniform Accessories" /></a>
+            <div class="product-info">
+                <h3>Winter & Outdoor Wear</h3>
+            </div>
+        </article>
+    </div>
+</section>
 				</div>
 
 			</div>
+			</div>
+			
 
 		<!-- Footer -->
-			<footer id="footer">
-				<div class="inner">
-					<!-- <ul class="copyright">
-						<li>&copy; Uniform Solutions</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
-					</ul> -->
-				</div>
-			</footer>
-			</div>
-
+			
 		<!-- Scripts -->
 			<script src="assets/js/jquery.min.js"></script>
 			<script src="assets/js/jquery.poptrox.min.js"></script>
@@ -244,7 +238,6 @@
 			<script src="assets/js/breakpoints.min.js"></script>
 			<script src="assets/js/util.js"></script>
 			<script src="assets/js/main.js"></script>
-			
 
 	</body>
 </html>

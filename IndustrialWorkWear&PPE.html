@@ -78,13 +78,28 @@
 				gap: 1rem;
 			}
 			
-			.work-item {
-				background: #fff;
-				border-radius: 6px;
-				overflow: hidden;
-				box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-				transition: all 0.3s ease;
-			}
+		.work-item {
+            display: flex;
+            flex-direction: column;
+            height: 100%; /* Ensure consistent height */
+        }
+
+        /* Ensure product info is always visible */
+        .product-info {
+            padding: 1rem;
+            text-align: center;
+            flex-grow: 1; /* Takes remaining space */
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        /* Make sure images don't overflow */
+        .image.fit.thumb {
+            width: 100%;
+            height: 200px; /* Fixed height for images */
+            object-fit: cover; /* Maintain aspect ratio */
+        }
 			
 			.work-item:hover {
 				transform: translateY(-3px);
@@ -92,10 +107,12 @@
 			}
 			
 			.work-item h3 {
-				color: #2a5ca7;
-				font-size: 1rem;
-				margin: 0.5rem 1rem;
-			}
+                color: #2a5ca7;
+                font-size: 1rem;
+                margin: 0.5rem 0;
+                padding: 0.5rem;
+                word-break: break-word; /* Prevent text overflow */
+            }
 			
 			.work-item p {
 				font-size: 0.9rem;
@@ -156,7 +173,7 @@
 						<h2 class="section-title">Our Catalogue</h2>
 						
 						<div class="category-grid">
-							<div class="category-item">
+								<div class="category-item">
 								<a href="CorporateUniform.html"><h3 class="category-title" >Corporate Uniform</h3></a>
 							</div>
 							
@@ -187,39 +204,37 @@
 						<h2 class="section-title">Featured Products</h2>
 						<div class="featured-grid">
 							<article class="work-item">
-								<a href="CorporateUniform.html" class="image fit thumb"><img src="images/Corporate-Uniform-opt.png" alt="Corporate Uniform" /></a>
-								<h3>Corporate Uniform</h3>
-								<p>Professional attire for business environments</p>
+                                <a href="#" class="image fit thumb">
+                                    <img src="images/82.jpg" alt="Corporate Uniform" />
+                                </a>
+                                <div class="product-info">
+                                    <h3>FR & Anti-Static safety wear</h3>
+                                </div>
+                            </article>
+							
+							<article class="work-item">
+								<a href="#" class="image fit thumb"><img src="images/26-215.jpg" alt="Industrial Work Wear & PPE" /></a>
+								<h3>Industrial & Technicians Workwear</h3>
 							</article>
 							
 							<article class="work-item">
-								<a href="#" class="image fit thumb"><img src="images/Industrial-Work-wear-PPE-opt.png" alt="Industrial Work Wear & PPE" /></a>
-								<h3>Industrial Work Wear & PPE</h3>
-								<p>Durable protection for industrial workers</p>
+								<a href="#" class="image fit thumb"><img src="images/26-305_safety-Vest-400x400.jpg" alt="Hospitality" /></a>
+								<h3>PPE</h3>
 							</article>
 							
 							<article class="work-item">
-								<a href="Hospitality.html" class="image fit thumb"><img src="images/Hospitality-opt.png" alt="Hospitality" /></a>
-								<h3>Hospitality</h3>
-								<p>Stylish outfits for service industry</p>
+								<a href="#" class="image fit thumb"><img src="images/66-400x400.jpg" alt="Healthcare & Sports" /></a>
+								<h3>Safety & Hi-Vis Vest & Apparel</h3>
 							</article>
 							
 							<article class="work-item">
-								<a href="#" class="image fit thumb"><img src="images/HealthCare-Sports-opt.png" alt="Healthcare & Sports" /></a>
-								<h3>Healthcare & Sports</h3>
-								<p>Comfortable medical uniforms</p>
+								<a href="#" class="image fit thumb"><img src="images/saftey-shoes.jpg" alt="Facility Management" /></a>
+								<h3>Safety Footwear</h3>
 							</article>
 							
 							<article class="work-item">
-								<a href="#" class="image fit thumb"><img src="images/Facility-Management-opt.png" alt="Facility Management" /></a>
-								<h3>Facility Management</h3>
-								<p>Functional uniforms for facility staff</p>
-							</article>
-							
-							<article class="work-item">
-								<a href="#" class="image fit thumb"><img src="images/Uniform-Accessories-opt.png" alt="Uniform Accessories" /></a>
-								<h3>Uniform Accessories</h3>
-								<p>Complete your professional look</p>
+								<a href="#" class="image fit thumb"><img src="images/88.jpg" alt="Uniform Accessories" /></a>
+								<h3>Standard Coveralls & Workwear</h3>
 							</article>
 						</div>
 					</section>
