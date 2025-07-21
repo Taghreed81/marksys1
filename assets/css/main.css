@@ -3299,10 +3299,9 @@ input, select, textarea {
 }
 
 #nav.fixed-nav {
-    width: calc(100% - 4em); /* Original wrapper width minus extra margins */
-    max-width: calc(64em - 4em); /* Match #wrapper's max-width minus 4em */
+    width: calc(100% - 4em); /* Reduced width with 2em margins on each side */
     margin: 0 auto 2em auto; /* Centered with bottom margin */
-    padding: 0.75em 1em; /* Adjust padding as needed */
+    padding: 0.75em 1em; /* Slightly reduced padding */
     background-color: rgba(247, 247, 247, 0.95);
     border-radius: 0.25em;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
@@ -3331,10 +3330,7 @@ input, select, textarea {
         padding: 0 0.75em; /* Reduce padding on mobile */
         font-size: 0.9em; /* Optional: reduce font size */
     }
-	
 }
-
-
 
 		#nav.alt {
 			position: fixed;

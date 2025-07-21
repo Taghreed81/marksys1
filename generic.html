@@ -17,7 +17,7 @@
 				flex-wrap: wrap;
 				gap: 2rem;
 				max-width: 1200px;
-				margin: 3em;
+				margin: 0 auto;
 				padding: 2rem;
 			}
 			
@@ -121,7 +121,19 @@
 
 			@media screen and (max-width: 600px) {
 				.featured-grid {
-					grid-template-columns: 1fr;
+					grid-template-columns: 1fr !important; /* Force single column */
+					gap: 1.5rem; /* Increase vertical spacing */
+				}
+				
+				.work-item {
+					margin-bottom: 1rem; /* Extra space between items */
+				}
+				
+				/* Optional: Adjust side-by-side container for mobile */
+				.side-by-side-container {
+					margin: 1em;
+					padding: 1rem;
+					gap: 2rem;
 				}
 			}
 			
