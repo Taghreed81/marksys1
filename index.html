@@ -19,16 +19,15 @@
 						
 						<p>Welcome to <h1>Marksys</h1>  Business Support
                              Established in 2009, Saudi Arabia
-						<!-- <a href="https://twitter.com/ajlkn">@ajlkn</a> for <a href="https://html5up.net">HTML5 UP</a>.</p> -->
 					</header>
 
 				<!-- Nav -->
 					<nav id="nav">
 						<ul>
-							<li><a href="#intro" class="active">HOME</a></li>
+							<li><a href="index.html" class="active">HOME</a></li>
 							<li><a href="generic.html">CATALOGUE</a></li>
 							<li><a href="#">CORPORATE GIFTS</a></li>
-							<li><a href="#">Get Started</a></li>
+							<li><a href="#">OUR CLIENTS</a></li>
 						</ul>
 					</nav>
 
@@ -46,7 +45,6 @@
                                          Today, We Have Successfully Grown Our Business and Presence Across The UAE and Other GCC, And Are Looking Forward to Further Expanding Our Network in The Middle East..</p>
 										<ul class="">
 											<li>Supplying Corporate Gift Items / Giveaways
-												<!-- <a href="generic.html" class="button">Learn More</a> -->
 											</li>
 											<li>Supplying Corporate Uniforms Apparel, Work Wear & PEE</li>
 											<li>Supplying Fabrics & Textile</li>
@@ -59,35 +57,7 @@
 							</section>
 
 						<!-- First Section -->
-							<!-- <section id="first" class="main special">
-								<header class="major">
-									<h2>Magna veroeros</h2>
-								</header>
-								<ul class="features">
-									<li>
-										<span class="icon solid major style1 fa-code"></span>
-										<h3>Ipsum consequat</h3>
-										<p>Sed lorem amet ipsum dolor et amet nullam consequat a feugiat consequat tempus veroeros sed consequat.</p>
-									</li>
-									<li>
-										<span class="icon major style3 fa-copy"></span>
-										<h3>Amed sed feugiat</h3>
-										<p>Sed lorem amet ipsum dolor et amet nullam consequat a feugiat consequat tempus veroeros sed consequat.</p>
-									</li>
-									<li>
-										<span class="icon major style5 fa-gem"></span>
-										<h3>Dolor nullam</h3>
-										<p>Sed lorem amet ipsum dolor et amet nullam consequat a feugiat consequat tempus veroeros sed consequat.</p>
-									</li>
-								</ul>
-								<footer class="major">
-									<ul class="actions special">
-										<li><a href="generic.html" class="button">Learn More</a></li>
-									</ul>
-								</footer>
-							</section> -->
-
-						<!-- Second Section -->
+						
 							<section id="second" class="main special">
 								<header class="major">
 									<h2>Our Story</h2>
@@ -149,6 +119,63 @@
 								</footer>
 							</section> -->
 
+							<!-- Slider Section -->
+			<!-- Multi-Item Slider Section -->
+						<section class="multi-slider-container">
+							
+							<h2 style="text-align: center; margin-bottom: 1.5rem;">Our Clients</h2>
+							<div class="multi-slider-wrapper">
+								<button class="multi-slider-prev">❮</button>
+								<div class="multi-slider">
+									<div class="multi-slide">
+										<img src="https://marksysonline.com/wp-content/uploads/2024/08/kingdom-tower-788x585.webp" alt="Product 1">
+										<div class="slide-caption">Corporate Gifts</div>
+									</div>
+									<div class="multi-slide">
+										<img src="https://example.com/path-to-your-second-image.jpg" alt="Product 2">
+										<div class="slide-caption">Workwear</div>
+									</div>
+									<div class="multi-slide">
+										<img src="https://example.com/path-to-your-third-image.jpg" alt="Product 3">
+										<div class="slide-caption">Safety Equipment</div>
+									</div>
+									<div class="multi-slide">
+										<img src="https://example.com/path-to-your-fourth-image.jpg" alt="Product 4">
+										<div class="slide-caption">Branded Apparel</div>
+									</div>
+									<div class="multi-slide">
+										<img src="https://example.com/path-to-your-fifth-image.jpg" alt="Product 5">
+										<div class="slide-caption">Custom Uniforms</div>
+									</div>
+									<div class="multi-slide">
+										<img src="https://marksysonline.com/wp-content/uploads/2024/08/kingdom-tower-788x585.webp" alt="Product 1">
+										<div class="slide-caption">Corporate Gifts</div>
+									</div>
+									<div class="multi-slide">
+										<img src="https://example.com/path-to-your-second-image.jpg" alt="Product 2">
+										<div class="slide-caption">Workwear</div>
+									</div>
+									<div class="multi-slide">
+										<img src="https://example.com/path-to-your-third-image.jpg" alt="Product 3">
+										<div class="slide-caption">Safety Equipment</div>
+									</div>
+									<div class="multi-slide">
+										<img src="https://example.com/path-to-your-fourth-image.jpg" alt="Product 4">
+										<div class="slide-caption">Branded Apparel</div>
+									</div>
+									<div class="multi-slide">
+										<img src="https://example.com/path-to-your-fifth-image.jpg" alt="Product 5">
+										<div class="slide-caption">Custom Uniforms</div>
+									</div>
+									<!-- Add more slides as needed (should be multiples of 5 for best results) -->
+								</div>
+								<button class="multi-slider-next">❯</button>
+							</div>
+							<div class="multi-slider-dots"></div>
+							<br />
+						</section>
+						<!-- Second Section -->
+
 					</div>
 
 				<!-- Footer -->
@@ -194,5 +221,108 @@
 			<script src="assets/js/util.js"></script>
 			<script src="assets/js/main.js"></script>
 
+			<!-- ///////////////// -->
+
+			<script>
+				document.addEventListener('DOMContentLoaded', function() {
+					const slider = document.querySelector('.multi-slider');
+					const slides = document.querySelectorAll('.multi-slide');
+					const dotsContainer = document.querySelector('.multi-slider-dots');
+					const prevBtn = document.querySelector('.multi-slider-prev');
+					const nextBtn = document.querySelector('.multi-slider-next');
+					
+					let currentIndex = 0;
+					const itemsToShow = 5; // Number of items visible at once
+					let slideInterval;
+					const slideDuration = 5000; // 5 seconds
+					
+					// Create dots based on slide groups
+					const dotCount = Math.ceil(slides.length / itemsToShow);
+					for (let i = 0; i < dotCount; i++) {
+						const dot = document.createElement('div');
+						dot.classList.add('multi-slider-dot');
+						if (i === 0) dot.classList.add('active');
+						dot.addEventListener('click', () => {
+							goToSlideGroup(i);
+						});
+						dotsContainer.appendChild(dot);
+					}
+					
+					const dots = document.querySelectorAll('.multi-slider-dot');
+					
+					// Update slider position
+					function updateSlider() {
+						const slideWidth = slides[0].offsetWidth + 20; // Width + margin
+						slider.scrollTo({
+							left: currentIndex * itemsToShow * slideWidth,
+							behavior: 'smooth'
+						});
+						
+						// Update dots
+						const activeDot = Math.floor(currentIndex / (slides.length / dotCount));
+						dots.forEach((dot, index) => {
+							dot.classList.toggle('active', index === activeDot);
+						});
+					}
+					
+					// Go to specific slide group
+					function goToSlideGroup(groupIndex) {
+						currentIndex = groupIndex * itemsToShow;
+						if (currentIndex >= slides.length) currentIndex = 0;
+						updateSlider();
+						resetInterval();
+					}
+					
+					// Next slide group
+					function nextSlideGroup() {
+						currentIndex += itemsToShow;
+						if (currentIndex >= slides.length) currentIndex = 0;
+						updateSlider();
+					}
+					
+					// Previous slide group
+					function prevSlideGroup() {
+						currentIndex -= itemsToShow;
+						if (currentIndex < 0) currentIndex = slides.length - itemsToShow;
+						updateSlider();
+					}
+					
+					// Auto slide
+					function startInterval() {
+						slideInterval = setInterval(nextSlideGroup, slideDuration);
+					}
+					
+					// Reset interval
+					function resetInterval() {
+						clearInterval(slideInterval);
+						startInterval();
+					}
+					
+					// Event listeners
+					nextBtn.addEventListener('click', () => {
+						nextSlideGroup();
+						resetInterval();
+					});
+					
+					prevBtn.addEventListener('click', () => {
+						prevSlideGroup();
+						resetInterval();
+					});
+					
+					// Start auto sliding
+					startInterval();
+					
+					// Pause on hover
+					slider.addEventListener('mouseenter', () => {
+						clearInterval(slideInterval);
+					});
+					
+					slider.addEventListener('mouseleave', startInterval);
+					
+					// Handle window resize
+					window.addEventListener('resize', updateSlider);
+				});
+			</script>
+		
 	</body>
 </html>

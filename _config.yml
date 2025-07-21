@@ -1,0 +1,2 @@
+include: [".html"]  # Ensures all HTML files are processed
+permalink: pretty   # Removes .html from URLs

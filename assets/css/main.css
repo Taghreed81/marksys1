@@ -3333,7 +3333,7 @@ input, select, textarea {
 }
 
 		#nav.alt {
-			position: fixed;
+			/* position: fixed; */
 			top: 0;
 			padding: 0.5em 1em;
 			background-color: rgba(247, 247, 247, 0.95);
@@ -3370,7 +3370,13 @@ input, select, textarea {
 	#main {
 		background-color: #ffffff;
 		color: #636363;
-		/* border-radius: 0.25em; */
+			width: 64em;
+			max-width: calc(100% - 4em);
+			margin: 0 auto;
+			padding: 0;
+			position: relative; /* Establish positioning context */
+		
+		
 	}
 
 		#main input, #main select, #main textarea {
@@ -3412,7 +3418,7 @@ input, select, textarea {
 		#main button,
 		#main .button {
 			background-color: transparent;
-			box-shadow: inset 0 0 0 1px #dddddd;
+			/* box-shadow: inset 0 0 0 1px #dddddd; */
 			color: #636363 !important;
 		}
 
@@ -3893,15 +3899,6 @@ input, select, textarea {
     padding: 20px;
 }
 
-/* Make #main match #nav width */
-/* Main container styling */
-#main {
-    width: 64em;
-    max-width: calc(100% - 4em);
-    margin: 0 auto;
-    padding: 0;
-    position: relative; /* Establish positioning context */
-}
 
 /* Navigation styling - match main container width */
 
@@ -3924,4 +3921,124 @@ input, select, textarea {
     width: 100%; /* Take full width of #main */
     margin: 3em 0; /* Adjust vertical margins only */
     padding: 0; /* Remove horizontal padding */
+}
+
+/* Multi-Item Slider Styles */
+.multi-slider-container {
+    max-width: 1200px;
+    margin: 2rem auto;
+    padding: 0 20px;
+    position: relative;
+}
+
+.multi-slider-wrapper {
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+
+.multi-slider {
+    display: flex;
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+    width: 100%;
+    padding: 10px 0;
+}
+
+.multi-slide {
+    flex: 0 0 calc(20% - 20px); /* Show 5 items (20% each with margin) */
+    margin: 0 10px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease;
+    position: relative;
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+.multi-slide:hover {
+    transform: translateY(-5px);
+}
+
+.multi-slide img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    display: block;
+}
+
+.slide-caption {
+    padding: 10px;
+    text-align: center;
+    background: #f8f8f8;
+    font-weight: bold;
+}
+
+.multi-slider-prev, 
+.multi-slider-next {
+    background: rgba(0,0,0,0.5);
+    border: none;
+    color: white;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    font-size: 1.2rem;
+    cursor: pointer;
+    z-index: 1;
+    transition: background 0.3s;
+}
+
+.multi-slider-prev:hover, 
+.multi-slider-next:hover {
+    background: rgba(0,0,0,0.8);
+}
+
+.multi-slider-prev {
+    margin-right: 10px;
+}
+
+.multi-slider-next {
+    margin-left: 10px;
+}
+
+.multi-slider-dots {
+    display: flex;
+    justify-content: center;
+    margin-top: 15px;
+}
+
+.multi-slider-dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: #ccc;
+    margin: 0 5px;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.multi-slider-dot.active {
+    background: #333;
+}
+
+/* Responsive adjustments */
+@media (max-width: 1024px) {
+    .multi-slide {
+        flex: 0 0 calc(25% - 20px); /* Show 4 items on tablets */
+    }
+}
+
+@media (max-width: 768px) {
+    .multi-slide {
+        flex: 0 0 calc(33.333% - 20px); /* Show 3 items */
+    }
+}
+
+@media (max-width: 480px) {
+    .multi-slide {
+        flex: 0 0 calc(50% - 20px); /* Show 2 items on mobile */
+    }
+    
+    .multi-slide img {
+        height: 150px;
+    }
 }
