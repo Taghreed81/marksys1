@@ -39,7 +39,7 @@
 				margin-bottom: 1.5rem;
 				text-transform: uppercase;
 				letter-spacing: 1px;
-				border-bottom: 2px solid #2a5ca7;
+				border-bottom: 2px solid #a179a7;
 				padding-bottom: 0.5rem;
 			}
 			
@@ -55,7 +55,7 @@
 				padding: 1.2rem;
 				box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 				transition: all 0.3s ease;
-				border-left: 4px solid #2a5ca7;
+				border-left: 4px solid #a179a7;
 			}
 			
 			.category-item:hover {
@@ -103,6 +103,7 @@
 				color: #666;
 			}
 			
+
 			/* Responsive adjustments */
 			@media screen and (max-width: 980px) {
 				.side-by-side-container {
@@ -117,12 +118,13 @@
 					grid-template-columns: repeat(2, 1fr);
 				}
 			}
-			
+
 			@media screen and (max-width: 600px) {
 				.featured-grid {
 					grid-template-columns: 1fr;
 				}
 			}
+			
 		</style>
 	</head>
 	<body class="is-preload">
@@ -140,9 +142,9 @@
 		<!-- Main -->
 			<div id="main">
 					<div id="wrapper">
-					<nav id="nav">
+					<nav id="nav" class="fixed-nav">
 						<ul>
-							<li><a href="#intro" class="active">HOME</a></li>
+							<li><a href="index.html" class="active">HOME</a></li>
 							<li><a href="generic.html">CATALOGUE</a></li>
 							<li><a href="#">CORPORATE GIFTS</a></li>
 							<li><a href="#">Get Started</a></li>

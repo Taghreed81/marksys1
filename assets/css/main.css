@@ -3213,14 +3213,13 @@ input, select, textarea {
     margin: 0 auto;
     left: 0;
     right: 0;
-    position: absolute;
-    /* Keep all your existing nav transitions and styles */
     -moz-transition: background-color 0.2s ease, border-top-left-radius 0.2s ease, border-top-right-radius 0.2s ease, padding 0.2s ease;
     -webkit-transition: background-color 0.2s ease, border-top-left-radius 0.2s ease, border-top-right-radius 0.2s ease, padding 0.2s ease;
     -ms-transition: background-color 0.2s ease, border-top-left-radius 0.2s ease, border-top-right-radius 0.2s ease, padding 0.2s ease;
     transition: background-color 0.2s ease, border-top-left-radius 0.2s ease, border-top-right-radius 0.2s ease, padding 0.2s ease;
     background-color: #f7f7f7;
     padding: 1em;
+	color: #636363;
     border-top-left-radius: 0.25em;
     border-top-right-radius: 0.25em;
 }
@@ -3299,6 +3298,25 @@ input, select, textarea {
     white-space: nowrap; /* Prevent text wrapping */
 }
 
+#nav.fixed-nav {
+    width: calc(100% - 4em); /* Original wrapper width minus extra margins */
+    max-width: calc(64em - 4em); /* Match #wrapper's max-width minus 4em */
+    margin: 0 auto 2em auto; /* Centered with bottom margin */
+    padding: 0.75em 1em; /* Adjust padding as needed */
+    background-color: rgba(247, 247, 247, 0.95);
+    border-radius: 0.25em;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Optional: Adjust the nav items spacing if needed */
+#nav.fixed-nav ul li {
+    margin: 0 0.75em; /* Reduced spacing between menu items */
+}
+
+#nav.fixed-nav ul li a {
+    padding: 0 1em; /* Adjust link padding if needed */
+}
+
 /* Responsive adjustments */
 @media screen and (max-width: 768px) {
     #nav ul {
@@ -3313,7 +3331,10 @@ input, select, textarea {
         padding: 0 0.75em; /* Reduce padding on mobile */
         font-size: 0.9em; /* Optional: reduce font size */
     }
+	
 }
+
+
 
 		#nav.alt {
 			position: fixed;
@@ -3323,6 +3344,9 @@ input, select, textarea {
 			border-top-left-radius: 0;
 			border-top-right-radius: 0;
 			z-index: 10000;
+			width: 1350px;
+			left: 50%;
+			transform: translateX(-50%);
 		}
 
 			#nav.alt ul li {
@@ -3350,7 +3374,7 @@ input, select, textarea {
 	#main {
 		background-color: #ffffff;
 		color: #636363;
-		border-radius: 0.25em;
+		/* border-radius: 0.25em; */
 	}
 
 		#main input, #main select, #main textarea {
@@ -3780,6 +3804,7 @@ input, select, textarea {
 		width: 64em;
 		max-width: calc(100% - 4em);
 		margin: 0 auto;
+	
 	}
 
 		@media screen and (max-width: 480px) {
@@ -3800,7 +3825,7 @@ input, select, textarea {
 
 		/* //////////////////////////// */
 
-		.featured-grid {
+.featured-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 1rem;
