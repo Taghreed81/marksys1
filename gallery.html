@@ -1,0 +1,359 @@
+<!DOCTYPE HTML>
+
+<html>
+	<head>
+		<title>Marksys</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+        <style>
+            /* Image Gallery Styles */
+/* Improved Gallery Styles */
+.image-gallery {
+    padding: 2rem 0;
+}
+
+.gallery-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 1.5rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.gallery-item {
+    position: relative;
+    border-radius: 4px;
+    overflow: hidden;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.gallery-thumb {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    display: block;
+    transition: opacity 0.2s ease;
+}
+
+.gallery-link:hover .gallery-thumb {
+    opacity: 0.9;
+}
+
+/* Fixed Zoom Overlay */
+.gallery-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0);
+    z-index: -1;
+    opacity: 0;
+    transition: opacity 0.3s ease, background 0.3s ease, z-index 0s 0.3s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    pointer-events: none;
+}
+
+.gallery-overlay:target {
+    opacity: 1;
+    background: rgba(0,0,0,0.9);
+    z-index: 1000;
+    pointer-events: auto;
+    transition: opacity 0.3s ease, background 0.3s ease, z-index 0s;
+}
+
+.gallery-zoom {
+    position: relative;
+    max-width: 800px;
+    width: 90%;
+    transform: scale(0.95);
+    opacity: 0;
+    transition: all 0.3s ease 0.1s;
+}
+
+.gallery-overlay:target .gallery-zoom {
+    transform: scale(1);
+    opacity: 1;
+}
+
+.gallery-zoom img {
+    max-height: 70vh;
+    width: auto;
+    max-width: 100%;
+    display: block;
+    margin: 0 auto;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.5);
+}
+
+.zoom-caption {
+    color: white;
+    text-align: center;
+    margin-top: 1rem;
+    padding: 1rem;
+    background: rgba(0,0,0,0.7);
+    border-radius: 4px;
+}
+
+.gallery-close {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    width: 40px;
+    height: 40px;
+    background: #e37682;
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    text-decoration: none;
+    opacity: 0;
+    transform: translateY(-10px);
+    transition: all 0.3s ease;
+}
+
+.gallery-overlay:target ~ .gallery-close,
+.gallery-overlay:target .gallery-close {
+    opacity: 1;
+    transform: translateY(0);
+    z-index: 1001;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .gallery-container {
+        grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    }
+    
+    .gallery-zoom {
+        width: 95%;
+    }
+}
+
+@media (max-width: 480px) {
+    .gallery-container {
+        grid-template-columns: 1fr 1fr;
+    }
+    
+    .gallery-thumb {
+        height: 150px;
+    }
+}
+        </style>
+	</head>
+	<body class="is-preload">
+
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Header -->
+					<header id="header" class="alt">
+						<span class="logo"><img src="images/logo-new.webp" alt="" /></span>
+						
+						<p>Welcome to <h1>Marksys</h1>  Business Support
+                             Established in 2009, Saudi Arabia
+					</header>
+
+				<!-- Nav -->
+					<nav id="nav">
+						<ul>
+							<li><a href="index.html" class="active">HOME</a></li>
+							<li><a href="generic.html">CATALOGUE</a></li>
+							<li><a href="#">CORPORATE GIFTS</a></li>
+							<li><a href="#">OUR CLIENTS</a></li>
+						</ul>
+					</nav>
+
+				<!-- Main -->
+					<div id="main">
+
+	<section class="image-gallery">
+    <div class="gallery-container">
+        <!-- Gallery Item 1 -->
+        <div class="gallery-item">
+            <a href="#image-1" class="gallery-link">
+                <img src="images/98.jpg" alt="EUGIAT LOREM" class="gallery-thumb">
+                <div class="gallery-caption">EUGIAT LOREM</div>
+            </a>
+            <div id="image-1" class="gallery-overlay">
+                <div class="gallery-zoom">
+                    <img src="images/98.jpg" alt="EUGIAT LOREM">
+                    <div class="zoom-caption">
+                        <h3>EUGIAT LOREM</h3>
+                        <p>NISL ADIPISCING<br>
+                        TEMPUS ALIQUAM VERDEROS<br>
+                        ALIQUAM IPSUM SEDI</p>
+                    </div>
+                    <a href="#close" class="gallery-close">×</a>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Gallery Item 2 -->
+        <div class="gallery-item">
+            <a href="#image-2" class="gallery-link">
+                <img src="images/88.jpg" alt="DISCUSSION" class="gallery-thumb">
+                <div class="gallery-caption">DISCUSSION</div>
+            </a>
+            <div id="image-2" class="gallery-overlay">
+                <div class="gallery-zoom">
+                    <img src="images/88.jpg" alt="DISCUSSION">
+                    <div class="zoom-caption">
+                        <h3>DISCUSSION</h3>
+                        <p>NISL ADIPISCING<br>
+                        Nunc blandit nisi ligula magna sodales lectus elementum non.</p>
+                    </div>
+                    <a href="#close" class="gallery-close">×</a>
+                </div>
+            </div>
+        </div>
+            <!-- Gallery Item 1 -->
+        <div class="gallery-item">
+            <a href="#image-1" class="gallery-link">
+                <img src="images/98.jpg" alt="EUGIAT LOREM" class="gallery-thumb">
+                <div class="gallery-caption">EUGIAT LOREM</div>
+            </a>
+            <div id="image-1" class="gallery-overlay">
+                <div class="gallery-zoom">
+                    <img src="images/98.jpg" alt="EUGIAT LOREM">
+                    <div class="zoom-caption">
+                        <h3>EUGIAT LOREM</h3>
+                        <p>NISL ADIPISCING<br>
+                        TEMPUS ALIQUAM VERDEROS<br>
+                        ALIQUAM IPSUM SEDI</p>
+                    </div>
+                    <a href="#close" class="gallery-close">×</a>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Gallery Item 2 -->
+        <div class="gallery-item">
+            <a href="#image-2" class="gallery-link">
+                <img src="images/88.jpg" alt="DISCUSSION" class="gallery-thumb">
+                <div class="gallery-caption">DISCUSSION</div>
+            </a>
+            <div id="image-2" class="gallery-overlay">
+                <div class="gallery-zoom">
+                    <img src="images/88.jpg" alt="DISCUSSION">
+                    <div class="zoom-caption">
+                        <h3>DISCUSSION</h3>
+                        <p>NISL ADIPISCING<br>
+                        Nunc blandit nisi ligula magna sodales lectus elementum non.</p>
+                    </div>
+                    <a href="#close" class="gallery-close">×</a>
+                </div>
+            </div>
+        </div>
+            <!-- Gallery Item 1 -->
+        <div class="gallery-item">
+            <a href="#image-1" class="gallery-link">
+                <img src="images/98.jpg" alt="EUGIAT LOREM" class="gallery-thumb">
+                <div class="gallery-caption">EUGIAT LOREM</div>
+            </a>
+            <div id="image-1" class="gallery-overlay">
+                <div class="gallery-zoom">
+                    <img src="images/98.jpg" alt="EUGIAT LOREM">
+                    <div class="zoom-caption">
+                        <h3>EUGIAT LOREM</h3>
+                        <p>NISL ADIPISCING<br>
+                        TEMPUS ALIQUAM VERDEROS<br>
+                        ALIQUAM IPSUM SEDI</p>
+                    </div>
+                    <a href="#close" class="gallery-close">×</a>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Gallery Item 2 -->
+        <div class="gallery-item">
+            <a href="#image-2" class="gallery-link">
+                <img src="images/88.jpg" alt="DISCUSSION" class="gallery-thumb">
+                <div class="gallery-caption">DISCUSSION</div>
+            </a>
+            <div id="image-2" class="gallery-overlay">
+                <div class="gallery-zoom">
+                    <img src="images/88.jpg" alt="DISCUSSION">
+                    <div class="zoom-caption">
+                        <h3>DISCUSSION</h3>
+                        <p>NISL ADIPISCING<br>
+                        Nunc blandit nisi ligula magna sodales lectus elementum non.</p>
+                    </div>
+                    <a href="#close" class="gallery-close">×</a>
+                </div>
+            </div>
+        </div>
+            <!-- Gallery Item 1 -->
+        <div class="gallery-item">
+            <a href="#image-1" class="gallery-link">
+                <img src="images/98.jpg" alt="EUGIAT LOREM" class="gallery-thumb">
+                <div class="gallery-caption">EUGIAT LOREM</div>
+            </a>
+            <div id="image-1" class="gallery-overlay">
+                <div class="gallery-zoom">
+                    <img src="images/98.jpg" alt="EUGIAT LOREM">
+                    <div class="zoom-caption">
+                        <h3>EUGIAT LOREM</h3>
+                        <p>NISL ADIPISCING<br>
+                        TEMPUS ALIQUAM VERDEROS<br>
+                        ALIQUAM IPSUM SEDI</p>
+                    </div>
+                    <a href="#close" class="gallery-close">×</a>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Gallery Item 2 -->
+        <div class="gallery-item">
+            <a href="#image-2" class="gallery-link">
+                <img src="images/88.jpg" alt="DISCUSSION" class="gallery-thumb">
+                <div class="gallery-caption">DISCUSSION</div>
+            </a>
+            <div id="image-2" class="gallery-overlay">
+                <div class="gallery-zoom">
+                    <img src="images/88.jpg" alt="DISCUSSION">
+                    <div class="zoom-caption">
+                        <h3>DISCUSSION</h3>
+                        <p>NISL ADIPISCING<br>
+                        Nunc blandit nisi ligula magna sodales lectus elementum non.</p>
+                    </div>
+                    <a href="#close" class="gallery-close">×</a>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Add more items as needed -->
+    </div>
+</section>
+				
+
+	
+					</div>
+
+				<!-- Footer -->
+					<footer id="footer">
+				
+
+					</footer>
+
+			</div>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.scrollex.min.js"></script>
+			<script src="assets/js/jquery.scrolly.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+			<!-- ///////////////// -->
+
+		
+	</body>
+</html>
