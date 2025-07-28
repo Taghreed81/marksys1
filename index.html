@@ -34,6 +34,29 @@
 				<!-- Main -->
 					<div id="main">
 
+						<section class="single-slider-container">
+							<div class="single-slider-wrapper">
+								<button class="single-slider-prev">❮</button>
+								<div class="single-slider">
+									<div class="single-slide active">
+										<img src="images/bean-bag-poster.jpg" alt="bean-bag-poster" class="slide-image">
+										<!-- <div class="slide-caption">New Product Launch</div> -->
+									</div>
+									<div class="single-slide">
+										<img src="images/unicore1.jpg" alt="Update 2" class="slide-image">
+										<!-- <div class="slide-caption">Company Event</div> -->
+									</div>
+									<div class="single-slide">
+										<img src="images/branding.webp" alt="Update 3" class="slide-image">
+										<!-- <div class="slide-caption">Industry Award</div> -->
+									</div>
+									<!-- Add more slides as needed -->
+								</div>
+								<button class="single-slider-next">❯</button>
+							</div>
+							<div class="single-slider-dots"></div>
+						</section>
+
 						<!-- Introduction -->
 							<section id="intro" class="main">
 								<div class="spotlight">
@@ -223,109 +246,11 @@
 			<script src="assets/js/breakpoints.min.js"></script>
 			<script src="assets/js/util.js"></script>
 			<script src="assets/js/main.js"></script>
+			<script src="assets/js/multislider.js"></script>
+			<script src="assets/js/singleslider.js"></script>
 
 			<!-- ///////////////// -->
 
-			<script>
-				document.addEventListener('DOMContentLoaded', function() {
-					const slider = document.querySelector('.multi-slider');
-					const slides = document.querySelectorAll('.multi-slide');
-					const dotsContainer = document.querySelector('.multi-slider-dots');
-					const prevBtn = document.querySelector('.multi-slider-prev');
-					const nextBtn = document.querySelector('.multi-slider-next');
-					
-					let currentIndex = 0;
-					const itemsToShow = 5; // Number of items visible at once
-					let slideInterval;
-					const slideDuration = 5000; // 5 seconds
-					
-					// Create dots based on slide groups
-					const dotCount = Math.ceil(slides.length / itemsToShow);
-					for (let i = 0; i < dotCount; i++) {
-						const dot = document.createElement('div');
-						dot.classList.add('multi-slider-dot');
-						if (i === 0) dot.classList.add('active');
-						dot.addEventListener('click', () => {
-							goToSlideGroup(i);
-						});
-						dotsContainer.appendChild(dot);
-					}
-					
-					const dots = document.querySelectorAll('.multi-slider-dot');
-					
-					// Update slider position
-					function updateSlider() {
-						const slideWidth = slides[0].offsetWidth + 20; // Width + margin
-						slider.scrollTo({
-							left: currentIndex * itemsToShow * slideWidth,
-							behavior: 'smooth'
-						});
-						
-						// Update dots
-						const activeDot = Math.floor(currentIndex / (slides.length / dotCount));
-						dots.forEach((dot, index) => {
-							dot.classList.toggle('active', index === activeDot);
-						});
-					}
-					
-					// Go to specific slide group
-					function goToSlideGroup(groupIndex) {
-						currentIndex = groupIndex * itemsToShow;
-						if (currentIndex >= slides.length) currentIndex = 0;
-						updateSlider();
-						resetInterval();
-					}
-					
-					// Next slide group
-					function nextSlideGroup() {
-						currentIndex += itemsToShow;
-						if (currentIndex >= slides.length) currentIndex = 0;
-						updateSlider();
-					}
-					
-					// Previous slide group
-					function prevSlideGroup() {
-						currentIndex -= itemsToShow;
-						if (currentIndex < 0) currentIndex = slides.length - itemsToShow;
-						updateSlider();
-					}
-					
-					// Auto slide
-					function startInterval() {
-						slideInterval = setInterval(nextSlideGroup, slideDuration);
-					}
-					
-					// Reset interval
-					function resetInterval() {
-						clearInterval(slideInterval);
-						startInterval();
-					}
-					
-					// Event listeners
-					nextBtn.addEventListener('click', () => {
-						nextSlideGroup();
-						resetInterval();
-					});
-					
-					prevBtn.addEventListener('click', () => {
-						prevSlideGroup();
-						resetInterval();
-					});
-					
-					// Start auto sliding
-					startInterval();
-					
-					// Pause on hover
-					slider.addEventListener('mouseenter', () => {
-						clearInterval(slideInterval);
-					});
-					
-					slider.addEventListener('mouseleave', startInterval);
-					
-					// Handle window resize
-					window.addEventListener('resize', updateSlider);
-				});
-			</script>
 		
 	</body>
 </html>

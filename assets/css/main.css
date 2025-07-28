@@ -2362,29 +2362,64 @@ input, select, textarea {
 
 /* Image */
 
-   .home_image img {
-    border-radius: 4px;       /* Small rounded corners */
-    max-width: 100%;          /* Ensures image doesn't overflow its container */
-    width: 500px;             /* Default medium size (for larger screens) */
-    height: auto;             /* Maintain aspect ratio */
-    margin-top: 120px;         /* Push image down from top */
-    display: block; 
-	margin-left: 40PX ;          /* Ensures margin works properly */
-    border: 1px solid #ddd;   /* Optional light border */
-  }
+/* Base Styles */
+.home_image img {
+  border-radius: 4px;
+  max-width: 100%;
+  width: auto;
+  height: auto;
+  display: block;
+  border: 1px solid #ddd;
+}
 
-  /* Adjust for smaller screens (e.g., tablets & phones) */
-  @media (max-width: 768px) {
-    .home_image img {
-      width: 750px;           /* Slightly smaller for tablets */
-    }
-  }
+/* Desktop Layout (default) */
+.spotlight {
+  display: flex;
+  align-items: flex-start;
+  gap: 40px;
+}
 
-  @media (max-width: 480px) {
-    .home_image img {
-      width: 200px;           /* Even smaller for mobile */
-    }
+.content {
+  flex: 1;
+}
+
+.home_image {
+  flex-shrink: 0;
+  width: 500px; /* Fixed width for desktop */
+  margin-top: 120px;
+}
+
+/* Tablet View (768px and below) */
+@media (max-width: 768px) {
+  .spotlight {
+    flex-direction: column;
+    gap: 30px;
   }
+  
+  .home_image {
+    order: -1; /* Move image before content */
+    width: 100%;
+    max-width: 600px;
+    margin: 0 auto 30px auto; /* Center image and add space below */
+    padding: 0 20px;
+  }
+  
+  .content {
+    padding: 0 20px;
+  }
+}
+
+/* Mobile View (480px and below) */
+@media (max-width: 480px) {
+  .home_image {
+    max-width: 100%;
+    padding: 0 15px;
+  }
+  
+  .home_image img {
+    max-width: 100%;
+  }
+}
 
 	.image {
 		border-radius: 8px;
@@ -4054,6 +4089,149 @@ input, select, textarea {
     
     .multi-slider-prev, 
     .multi-slider-next {
+        width: 30px;
+        height: 30px;
+        font-size: 1rem;
+    }
+}
+
+/* panner  */
+
+/* Single Item Slider Styles */
+.single-slider-container {
+    max-width: 1200px;
+    margin: 3rem auto;
+    padding: 0 20px;
+	
+}
+
+.section-title {
+    text-align: center;
+    margin-bottom: 1.5rem;
+    color: #333;
+}
+
+.single-slider-wrapper {
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+
+.single-slider {
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+}
+
+.single-slide {
+    display: none;
+    width: 100%;
+    transition: opacity 0.5s ease;
+    position: relative;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.single-slide.active {
+    display: block;
+    animation: fadeIn 0.5s ease;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0.4; }
+    to { opacity: 1; }
+}
+
+.slide-image {
+    width: 100%;
+    height: 400px;
+    display: block;
+	object-fit: contain;
+}
+
+.slide-caption {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgba(0,0,0,0.7);
+    color: white;
+    padding: 15px;
+    text-align: center;
+    font-size: 1.2rem;
+}
+
+.single-slider-prev,
+.single-slider-next {
+    background: rgba(0,0,0,0.5);
+    border: none;
+    color: white;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    font-size: 1.2rem;
+    cursor: pointer;
+    z-index: 10;
+    transition: all 0.3s;
+    flex-shrink: 0;
+	min-width: 10PX;
+}
+
+.single-slider-prev:hover,
+.single-slider-next:hover {
+    background: rgba(0,0,0,0.8);
+    transform: scale(1.1);
+}
+
+.single-slider-prev {
+    margin-right: 15px;
+}
+
+.single-slider-next {
+    margin-left: 15px;
+}
+
+.single-slider-dots {
+    display: flex;
+    justify-content: center;
+    margin-top: 15px;
+    gap: 10px;
+}
+
+.single-slider-dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: #ccc;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.single-slider-dot.active {
+    background: #333;
+    transform: scale(1.2);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .slide-image {
+        height: 300px;
+    }
+    
+    .slide-caption {
+        font-size: 1rem;
+        padding: 10px;
+    }
+}
+
+@media (max-width: 480px) {
+    .slide-image {
+        height: 250px;
+    }
+    
+    .single-slider-prev,
+    .single-slider-next {
         width: 30px;
         height: 30px;
         font-size: 1rem;
