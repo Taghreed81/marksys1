@@ -3299,11 +3299,13 @@ input, select, textarea {
     list-style: none;
     text-align: center; /* Center the list items */
     white-space: nowrap; /* Prevent wrapping on small screens */
-    overflow-x: auto; /* Allow horizontal scrolling if needed */
-    -webkit-overflow-scrolling: touch; /* Smooth scrolling on mobile */
+ 
     display: flex; /* Use flexbox for better control */
     justify-content: center; /* Center items horizontally */
     flex-wrap: nowrap; /* Prevent wrapping by default */
+	overflow-x: visible;
+        white-space: normal;
+        -webkit-overflow-scrolling: auto;
 }
 
 #nav ul li {
@@ -4122,7 +4124,14 @@ input, select, textarea {
     max-width: 1200px;
     margin: 3rem auto;
     padding: 0 20px;
-	
+}
+
+.slide-image {
+    width: 100%;
+    height: 400px;
+    display: block;
+    object-fit: contain;
+    margin: 0 auto;
 }
 
 .section-title {
@@ -4163,13 +4172,13 @@ input, select, textarea {
     to { opacity: 1; }
 }
 
-.slide-image {
+/* .slide-image {
     width: 100%;
     height: 400px;
     display: block;
 	object-fit: contain;
 	margin: 0 auto;
-}
+} */
 
 .slide-caption {
     position: absolute;
@@ -4236,36 +4245,56 @@ input, select, textarea {
 
 /* Responsive Design */
 @media (max-width: 768px) {
-    /* .slide-image {
-        height: 300px;
-    } */
-    
-    .slide-caption {
-        font-size: 1rem;
-        padding: 10px;
+    /* Slightly reduced height with side margins */
+    .slide-image {
+        height: 45vh; /* Reduced from 75vh */
+        max-height: none;
+        width: auto;
+        max-width: calc(100% - 40px); /* Adds 20px margin on each side */
+        margin: 0 auto; /* Centers the image */
     }
-
-	.single-slider-dot {
-    width: 10px;
-    height: 10px;
-    border-radius: 50%;
-    background: #ccc;
-    cursor: pointer;
-    transition: all 0.3s;
-}
+    
+    /* Hide navigation arrows */
+    .single-slider-prev,
+    .single-slider-next {
+        display: none !important;
+    }
+    
+    /* Make dots smaller */
+    .single-slider-dots {
+        margin-top: 10px;
+    }
+    
+    .single-slider-dot {
+        width: 8px;
+        height: 8px;
+    }
+    
+    /* Adjust container spacing */
+    .single-slider-container {
+        padding: 0 20px; /* Adds side margins */
+        margin: 1rem 0; /* Reduced vertical margin */
+    }
+    
+    .single-slider-wrapper {
+        padding: 0;
+    }
 }
 
 @media (max-width: 480px) {
     .slide-image {
-		width: 100%;
-		max-width: 600px;
-		padding: 0 20px;
+        height: 35vh; /* Slightly smaller on phones */
+        max-width: calc(100% - 30px); /* Smaller side margins */
     }
     
-    .single-slider-prev,
-    .single-slider-next {
-        width: 30px;
-        height: 30px;
-        font-size: 1rem;
+    /* Make dots even smaller */
+    .single-slider-dot {
+        width: 6px;
+        height: 6px;
+    }
+    
+    .single-slider-container {
+        padding: 0 05px; /* Smaller side margins */
+        margin: 0.5rem 0; /* Tighter vertical spacing */
     }
 }
