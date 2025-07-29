@@ -3299,13 +3299,12 @@ input, select, textarea {
     list-style: none;
     text-align: center; /* Center the list items */
     white-space: nowrap; /* Prevent wrapping on small screens */
- 
+    overflow-x: auto; /* Allow horizontal scrolling if needed */
+    -webkit-overflow-scrolling: touch; /* Smooth scrolling on mobile */
     display: flex; /* Use flexbox for better control */
     justify-content: center; /* Center items horizontally */
     flex-wrap: nowrap; /* Prevent wrapping by default */
-	overflow-x: visible;
-        white-space: normal;
-        -webkit-overflow-scrolling: auto;
+	
 }
 
 #nav ul li {
@@ -3354,73 +3353,61 @@ input, select, textarea {
 }
 
 /* Responsive adjustments */
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 736px) {
+    #nav {
+        display: block;
+        width: calc(100% - 4em); /* Reduced from sides */
+        max-width: 100%;
+        padding: 0.5em 0; /* Remove side padding */
+        margin: 0 auto;
+        background-color: #f7f7f7;
+        border-radius: 0.25em;
+        overflow: hidden; /* Prevent scrolling */
+    }
+    
     #nav ul {
-        justify-content: flex-start; /* Switch to horizontal scroll on small screens */
+        display: flex;
+        justify-content: center; /* Center items */
+        flex-wrap: wrap; /* Allow wrapping if needed */
+        padding: 0;
+        margin: 0;
+        list-style: none;
+        white-space: nowrap; /* Prevent text wrapping */
     }
     
     #nav ul li {
-        margin: 0 0.35em; /* Reduce spacing on mobile */
+        margin: 0 0.15em; /* Reduced spacing */
+        flex-shrink: 1; /* Allow items to shrink */
     }
     
     #nav ul li a {
-        padding: 0 0.75em; /* Reduce padding on mobile */
-        font-size: 0.9em; /* Optional: reduce font size */
+        padding: 0.5em 0.3em; /* Reduced padding */
+        font-size: 0.75em; /* Smaller text */
+        display: block;
+    }
+    
+    /* Remove all horizontal scrolling */
+    #nav ul {
+        overflow-x: visible;
+        -webkit-overflow-scrolling: auto;
     }
 }
 
-		#nav.alt {
-			/* position: fixed; */
-			top: 0;
-			padding: 0.5em 1em;
-			background-color: rgba(247, 247, 247, 0.95);
-			border-top-left-radius: 0;
-			border-top-right-radius: 0;
-			z-index: 10000;
-			width: 1350px;
-			left: 50%;
-			transform: translateX(-50%);
-		}
-
-			#nav.alt ul li {
-				margin: 0 0.175em;
-			}
-
-				#nav.alt ul li a {
-					font-size: 0.9em;
-				}
-
-		@media screen and (max-width: 736px) {
-
-			/* #nav {
-				display: none;
-			} */
-
-			   #nav {
-					display: block; /* or flex */
-					width: 100%;
-					max-width: 100%;
-					padding: 0.5em;
-				}
-				
-				#nav ul {
-					justify-content: space-around; /* better spacing for mobile */
-				}
-				
-				#nav ul li a {
-					padding: 0 0.5em;
-					font-size: 0.8em;
-				}
-				
-				#nav + #main {
-					padding-top: 0;
-				}
-
-				#nav + #main {
-					padding-top: 0;
-				}
-
-		}
+/* For very small screens */
+@media screen and (max-width: 480px) {
+    #nav {
+        width: calc(100% - 4em); /* Even more compact */
+    }
+    
+    #nav ul li {
+        margin: 0 0.1em;
+    }
+    
+    #nav ul li a {
+        padding: 0.4em 0.2em;
+        font-size: 0.7em;
+    }
+}
 
 /* Main */
 
@@ -4298,3 +4285,5 @@ input, select, textarea {
         margin: 0.5rem 0; /* Tighter vertical spacing */
     }
 }
+
+
