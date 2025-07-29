@@ -3390,9 +3390,29 @@ input, select, textarea {
 
 		@media screen and (max-width: 736px) {
 
-			#nav {
+			/* #nav {
 				display: none;
-			}
+			} */
+
+			   #nav {
+					display: block; /* or flex */
+					width: 100%;
+					max-width: 100%;
+					padding: 0.5em;
+				}
+				
+				#nav ul {
+					justify-content: space-around; /* better spacing for mobile */
+				}
+				
+				#nav ul li a {
+					padding: 0 0.5em;
+					font-size: 0.8em;
+				}
+				
+				#nav + #main {
+					padding-top: 0;
+				}
 
 				#nav + #main {
 					padding-top: 0;
@@ -4148,6 +4168,7 @@ input, select, textarea {
     height: 400px;
     display: block;
 	object-fit: contain;
+	margin: 0 auto;
 }
 
 .slide-caption {
@@ -4215,19 +4236,30 @@ input, select, textarea {
 
 /* Responsive Design */
 @media (max-width: 768px) {
-    .slide-image {
+    /* .slide-image {
         height: 300px;
-    }
+    } */
     
     .slide-caption {
         font-size: 1rem;
         padding: 10px;
     }
+
+	.single-slider-dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: #ccc;
+    cursor: pointer;
+    transition: all 0.3s;
+}
 }
 
 @media (max-width: 480px) {
     .slide-image {
-        height: 250px;
+		width: 100%;
+		max-width: 600px;
+		padding: 0 20px;
     }
     
     .single-slider-prev,
