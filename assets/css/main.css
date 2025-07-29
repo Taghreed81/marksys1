@@ -4230,26 +4230,23 @@ input, select, textarea {
     transform: scale(1.2);
 }
 
-/* Responsive Design */
+/* Responsive Design - Reduced Vertical Spacing */
 @media (max-width: 768px) {
-    /* Slightly reduced height with side margins */
     .slide-image {
-        height: 45vh; /* Reduced from 75vh */
+        height: 45vh;
         max-height: none;
         width: auto;
-        max-width: calc(100% - 40px); /* Adds 20px margin on each side */
-        margin: 0 auto; /* Centers the image */
+        max-width: calc(100% - 40px);
+        margin: 0 auto; /* No vertical margin */
     }
     
-    /* Hide navigation arrows */
     .single-slider-prev,
     .single-slider-next {
         display: none !important;
     }
     
-    /* Make dots smaller */
     .single-slider-dots {
-        margin-top: 10px;
+        margin: 5px 0; /* Reduced from 10px top */
     }
     
     .single-slider-dot {
@@ -4257,10 +4254,9 @@ input, select, textarea {
         height: 8px;
     }
     
-    /* Adjust container spacing */
     .single-slider-container {
-        padding: 0 20px; /* Adds side margins */
-        margin: 1rem 0; /* Reduced vertical margin */
+        padding: 0 20px;
+        margin: 0.25rem 0; /* Reduced from 1rem */
     }
     
     .single-slider-wrapper {
@@ -4270,20 +4266,23 @@ input, select, textarea {
 
 @media (max-width: 480px) {
     .slide-image {
-        height: 35vh; /* Slightly smaller on phones */
-        max-width: calc(100% - 30px); /* Smaller side margins */
+        height: 35vh;
+        max-width: calc(100% - 30px);
+		
     }
     
-    /* Make dots even smaller */
     .single-slider-dot {
         width: 6px;
         height: 6px;
     }
     
     .single-slider-container {
-        padding: 0 05px; /* Smaller side margins */
-        margin: 0.5rem 0; /* Tighter vertical spacing */
+        padding: 0 5px;
+        margin: 0.15rem 0; /* Reduced from 0.5rem */
+    }
+    
+    .single-slider-dots {
+        margin: 3px 0; /* Even tighter spacing */
     }
 }
-
 

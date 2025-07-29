@@ -105,37 +105,49 @@
 			
 
 			/* Responsive adjustments */
-			@media screen and (max-width: 980px) {
-				.side-by-side-container {
-					flex-direction: column;
-				}
-				
-				.catalogue-section, .featured-section {
-					width: 100%;
-				}
-				
-				.featured-grid {
-					grid-template-columns: repeat(2, 1fr);
-				}
-			}
+	@media screen and (max-width: 600px) {
+    /* Fix catalogue section overflow */
+    .catalogue-section {
+        width: calc(100% - 2rem) !important; /* Account for padding */
+        margin: 0 auto;
+        padding: 0 1rem;
+        box-sizing: border-box; /* Include padding in width calculation */
+    }
 
-			@media screen and (max-width: 600px) {
-				.featured-grid {
-					grid-template-columns: 1fr !important; /* Force single column */
-					gap: 1.5rem; /* Increase vertical spacing */
-				}
-				
-				.work-item {
-					margin-bottom: 1rem; /* Extra space between items */
-				}
-				
-				/* Optional: Adjust side-by-side container for mobile */
-				.side-by-side-container {
-					margin: 1em;
-					padding: 1rem;
-					gap: 2rem;
-				}
-			}
+    /* Ensure featured section stays contained */
+    .featured-section {
+        width: calc(100% - 2rem) !important;
+        margin: 0 auto;
+        padding: 0 1rem;
+        box-sizing: border-box;
+    }
+
+    /* Adjust grid layout */
+    .featured-grid {
+        grid-template-columns: 1fr !important;
+        gap: 1.5rem;
+        width: 100%;
+        max-width: 100%;
+        margin: 0;
+        padding: 0;
+    }
+
+    /* Container adjustments */
+    .side-by-side-container {
+        margin: 0;
+        padding: 1rem;
+        gap: 2rem;
+        width: 100%;
+        overflow: hidden; /* Prevent any horizontal overflow */
+    }
+
+    /* Work item spacing */
+    .work-item {
+        margin-bottom: 1rem;
+        width: 100% !important;
+        max-width: 100% !important;
+    }
+}
 			
 		</style>
 	</head>
